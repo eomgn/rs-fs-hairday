@@ -20,6 +20,7 @@ export function hoursLoad({ date, dailySchedules }) {
 
     // adiciona a hora na data e verifica se está no passado // ou seja, esta verificando as horas que se tem no arquivo opening-rous.js e se na HORA ATUAL há disponibilidade baseado no arquivo opening-rous.js
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
+
     const available = !unavailableHours.includes(hour) && !isHourPast;
 
     return {
