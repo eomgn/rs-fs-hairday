@@ -43,7 +43,7 @@ form.addEventListener("submit", async (event) => {
     const when = dayjs(selectedDate.value).add(hour, "hour");
 
     // gerar um ID
-    const id = new Date().getTime();
+    const id = new Date().getTime().toString(); // precisa definir o id como string para ser possivel acessar na API
 
     // fazemos o agendamento
     await scheduleNew({
