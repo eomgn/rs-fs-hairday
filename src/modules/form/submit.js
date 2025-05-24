@@ -1,5 +1,6 @@
 // importacoes
 import dayjs from "dayjs";
+import { scheduleNew } from "../../services/schedule-new.js";
 
 // selecionando inputs
 const form = document.querySelector("form");
@@ -43,7 +44,7 @@ form.addEventListener("submit", async (event) => {
     // gerar um ID
     const id = new Date().getTime();
 
-    console.log({
+    await scheduleNew({
       id,
       name,
       when,
